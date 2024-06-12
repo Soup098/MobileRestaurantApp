@@ -53,10 +53,11 @@ function renderMenu(){
 
 
 function addToCart(item, price){
-    totalPrice += price
-    let cart = document.getElementById('cart')
-    cart.innerHTML += `
-        <p>${item} costs ${price}</p>
+    let choices = document.getElementById('choices')
+    choices.innerHTML += `
+        <div class="line-item">
+            <p>${item}</p><p>${price}</p>
+        </div>
     `
 }
 
@@ -65,7 +66,11 @@ function renderTotal(cost){
     totalPrice += cost
     let finalCost = document.getElementById('total')
     finalCost.innerHTML = `
-        <p> Total Price = ${totalPrice}</p>
+        <div class="price-final">
+            <p>Total Price:</p><p>${totalPrice}</p>
+        </div>
+        
+        <button class="purchase-btn">Purchase</button>
     `
 }
 
