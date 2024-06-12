@@ -22,10 +22,16 @@ h3{
 .items-container{
     display: flex;
     align-items: center;
-    position: relative;
+}
+.items-container, hr{
+    margin-left: 30px;
+    margin-right: 30px;
 }
 .item-emoji{
     font-size: 70px;
+}
+.ingredients{
+    width: 350px
 }
 .add-btn{
     border: 1px solid #DEDEDE;
@@ -34,4 +40,5 @@ h3{
     width: 50px;
     font-size: 30px;
 }
+
 
