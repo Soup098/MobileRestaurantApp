@@ -31,15 +31,15 @@ function buttonFunction(){
             const item = button.getAttribute('id')
             if(item === 'Pizza-btn'){
                 addToCart('pizza', 14)
-                renderTotal(14)
+                renderTotal(menuArray[0].price)
             }
             else if(item ==='Hamburger-btn'){
                 addToCart('Hamburger', 12)
-                renderTotal(12)
+                renderTotal(menuArray[1].price)
             }
             else if(item ==='Beer-btn'){
                 addToCart('Beer', 7)
-                renderTotal(7)
+                renderTotal(menuArray[2].price)
             }
         })
     })
