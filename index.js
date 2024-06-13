@@ -1,8 +1,8 @@
-import { menuArray } from "./data.js";
+import { menuArray } from "./data.js";//import the menu array
 
+const payBtn = document.getElementById('pay-btn') //get control of the order submit button
 
-
-function getMenuHtml(){
+function getMenuHtml(){ // function to render the HTML of the menu, including the add to order buttons
     let menuHtml = ``
     menuArray.forEach(function(menuItem){
         menuHtml += `
@@ -25,8 +25,9 @@ function getMenuHtml(){
     return menuHtml
 }
 
-
-function buttonFunction(){
+// this function gives functionality to the add to order buttons. it also calls
+// the addToCart and renderTotal() functions within the if loop
+function buttonFunction(){ 
     const addBtns = document.querySelectorAll('.add-btn')
     addBtns.forEach(function(button){
         button.addEventListener("click", function(){
@@ -47,45 +48,50 @@ function buttonFunction(){
     })
 }
 
-
-function renderMenu(){
+function renderMenu(){// renders the menu and calls the buttonFunction() function
     document.getElementById('menu').innerHTML = getMenuHtml()
     buttonFunction()
 }
 
-
-function addToCart(item, price){
+function addToCart(item, price){//renders the HTML for the line items in the cart
     let choices = document.getElementById('choices')
     choices.innerHTML += `
         <div class="line-item">
-            <p>${item}</p><p>${price}</p>
+            <h2>${item}</h2><h2>$${price}</h2>
         </div>
     `
 }
 
+// renders the HTML for the total cost of the line items in the cart, and calls the function
+// to render the purchase button to bring up the payment modal
 let totalPrice = 0
 function renderTotal(cost){
     totalPrice += cost
     let finalCost = document.getElementById('total')
     finalCost.innerHTML = `
         <div class="price-final">
-            <p>Total Price:</p><p>${totalPrice}</p>
+            <h2>Total Price:</h2><h2>$${totalPrice}</h2>
         </div>
     `
     renderPurchaseButton()
 }
 
-function renderPurchaseButton(){
+function renderPurchaseButton(){// renders the purchase button and gives it functionality
+    const modal = document.getElementById('modal')
     const purchaseBtnContainer = document.getElementById('purchase-btn-container')
     purchaseBtnContainer.innerHTML = `
-        <button class="purchase-btn" id="purchase-btn" >Purchase</button>
+        <button class="purchase-btn" id="purchase-btn" >Complete order</button>
     `
     const purchaseBtn = document.getElementById('purchase-btn')
     purchaseBtn.addEventListener('click',function(){
-        console.log("Clicked!!")
+        modal.style.display = 'inline'
     })
     
 }
 
-renderMenu()
+payBtn.addEventListener('click', function(){// pay button functionality
+    modal.style.display = 'none'
+})
+
+renderMenu()// calling the function to render the menu on the website
 

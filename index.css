@@ -1,8 +1,13 @@
+html{
+    background-color: #8B4513;
+}
 body {
-    margin: 0;
+    background-color: #F3E5AB;
+    margin: 0 auto;
     border: 1px solid black;
     height: 1160px;
     width: 600px;
+    font-family: "Smythe";
 }
 header{
     background-image: url(./images/burger.jpg);
@@ -16,14 +21,20 @@ header{
 h1{
     margin: 35 auto 5 30;
 } 
+h2{
+    font-size: 24px;
+    color: #000000;
+}
 h3{
     margin: 5 auto 10 30;
+}
+p{
+    color: #8B8B8B;
 }
 .items-container{
     display: flex;
     align-items: center;
 }
-
 .item-emoji{
     font-size: 70px;
 }
@@ -36,6 +47,10 @@ h3{
     height: 50px;
     width: 50px;
     font-size: 30px;
+    background-color: #FFFFFF;
+}
+.add-btn:hover{
+    background-color: #ededed;
 }
 .line-item, .price-final{
     text-transform: capitalize;
@@ -55,8 +70,52 @@ h3{
     justify-content: center;
 }
 .purchase-btn{
-    
+    border: 1px solid #757575;
+    font-size: 20;
+    width: 500px;
+    height: 60px;
+    background-color: whitesmoke;
+    color: #000000
 }
-
+.purchase-btn:hover{
+    background-color: rgb(227, 227, 227);
+}
+.purchase-btn:active{
+    transform: scale(0.98)
+}
+.modal{
+    display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 540px;
+    width: 520px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #666;
+    background-color: #F3E5AB;
+    color: whitesmoke;
+}
+.modal-content, .card-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.modal-input, .pay-btn{
+    width: 475px;
+    height: 70px;
+    margin: 10px auto;
+    border: 1px solid #757575;
+    border-radius: 5px;
+}
+.pay-btn{
+    background-color: whitesmoke;
+}
+.pay-btn:hover{
+    background-color: rgb(227, 227, 227)
+}
 
 

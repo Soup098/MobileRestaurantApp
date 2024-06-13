@@ -1,5 +1,9 @@
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+
        <link rel="stylesheet" href="index.css">
     </head>
     <body>
@@ -24,9 +28,18 @@
                     <!-- purchase button from js-->
                 </div>
             </div>
-            
             <br>
-            <!-- <div class="total" id="total"></div> -->
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <h2>Enter Card Details</h2>
+                    <form class="card-form">
+                        <input class="modal-input" type="text" name="full-name" placeholder="Full Name">
+                        <input class="modal-input" type="text" name="card-number" placeholder="Card Number">
+                        <input class="modal-input" type="text" name="cvv" placeholder="CVV">
+                    </form>
+                    <button class="pay-btn" id ="pay-btn"> Submit Order</button>
+                </div>
+            </div>
         </main>
         
 	    <script src="index.js" type="module"></script>
