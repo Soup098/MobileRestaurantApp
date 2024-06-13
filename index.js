@@ -1,5 +1,7 @@
 import { menuArray } from "./data.js";
 
+
+
 function getMenuHtml(){
     let menuHtml = ``
     menuArray.forEach(function(menuItem){
@@ -69,11 +71,21 @@ function renderTotal(cost){
         <div class="price-final">
             <p>Total Price:</p><p>${totalPrice}</p>
         </div>
-        
-        <button class="purchase-btn">Purchase</button>
     `
+    renderPurchaseButton()
 }
 
+function renderPurchaseButton(){
+    const purchaseBtnContainer = document.getElementById('purchase-btn-container')
+    purchaseBtnContainer.innerHTML = `
+        <button class="purchase-btn" id="purchase-btn" >Purchase</button>
+    `
+    const purchaseBtn = document.getElementById('purchase-btn')
+    purchaseBtn.addEventListener('click',function(){
+        console.log("Clicked!!")
+    })
+    
+}
 
 renderMenu()
 
